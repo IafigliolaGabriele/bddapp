@@ -1,0 +1,13 @@
+#logs
+logs*.logs
+.c9
+
+npm-debug.log*
+package-lock.json
+
+# Directories
+node_modules
+docs
+bin
+.idea
+out

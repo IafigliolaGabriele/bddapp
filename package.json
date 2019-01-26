@@ -1,0 +1,22 @@
+{
+  "name": "bddapp",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "live": "./node_modules/.bin/nodemon index3.js",
+    "start": "node index.js"
+  },
+  "author": "IafigliolaGabriele",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
+    "nodemon": "^1.18.9",
+    "pug": "^2.0.3",
+    "sequelize": "^4.42.0"
+  }
+}
