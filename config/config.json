@@ -1,7 +1,7 @@
 {
     "host": "localhost",
     "port": 3000,
-    "password": "tu password",
-    "username": "tu username",
+    "password": "my coontrasena",
+    "username": "mu username",
     "sql_port": 3306
 }

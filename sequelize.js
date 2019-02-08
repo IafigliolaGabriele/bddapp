@@ -2,6 +2,7 @@ const Sequelize = require('sequelize')
 const CustomerModel = require('./models/customer')
 const BlogModel = require('./models/blog')
 const TagModel = require('./models/tag')
+//const BlogTag = require('./models/blogTag')
 
 const sequelize = new Sequelize('sakila', 'Gabo', 'mypassword', {
   host: 'localhost',
@@ -18,15 +19,16 @@ const sequelize = new Sequelize('sakila', 'Gabo', 'mypassword', {
 const Customer = CustomerModel(sequelize, Sequelize)
 // BlogTag will be our way of tracking relationship between Blog and Tag models
 // each Blog can have multiple tags and each Tag can have multiple blogs
-const BlogTag = sequelize.define('blog_tag', {})
+const BlogTag = sequelize.define('blog_tag', {text : Sequelize.STRING})
 const Blog = BlogModel(sequelize, Sequelize)
 const Tag = TagModel(sequelize, Sequelize)
 
 Blog.belongsToMany(Tag, { through: BlogTag, unique: false })
 Tag.belongsToMany(Blog, { through: BlogTag, unique: false })
+
 Blog.belongsTo(Customer);
 
-sequelize.sync({ force: false })
+sequelize.sync({ force: true })
   .then(() => {
     console.log(`Database & tables created!`)
   })
